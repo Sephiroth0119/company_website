@@ -1,0 +1,5 @@
+t<html>
+<?php
+require('./header.php');
+?>
+</html>

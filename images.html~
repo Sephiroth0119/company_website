@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>图片轮播</title>
+<script type="text/javascript">
+     window.onload = function() {
+         flag = 0;
+         obj1 = document.getElementById("slider");
+         obj2 = document.getElementsByTagName("li");
+         obj2[0].style.backgroundColor = "#666666";
+            
+            //设置图片自动转换的时间间隔
+	 time = setInterval("turn();", 1000);
+            //当鼠标移到目标上
+         obj1.onmouseover = function () {
+                //清除时间间隔 
+                clearInterval(time);
+            }
+            //当鼠标滑出，鼠标从图片上经过之后，图片的转换时间
+         obj1.onmouseout = function () {
+                time = setInterval("turn();", 2000);
+            }
+ 
+          for (var num = 0; num < obj2.length; num++) {
+                obj2[num].onmouseover = function () {
+                    turn(this.innerHTML);
+                    clearInterval(time);
+                }
+				//当鼠标仅在数字上停留，然后拿开后的图片轮换时间
+                obj2[num].onmouseout = function () {
+                    time = setInterval("turn();", 8000);
+                }
+            }
+     
+            document.getElementById("second").src = "image/1.jpg";
+            document.getElementById("third").src = "image/4.jpg";
+ 
+     }
+ 
+        function turn(value) {
+            if (value != null) {
+                flag = value - 2;
+            }
+            if (flag < obj2.length - 1)
+                flag++;
+            else
+                flag = 0;
+            obj1.style.top = flag * (-768) + "px";/*768为图片的高度*/
+            for (var j = 0; j < obj2.length; j++) {
+                obj2[j].style.backgroundColor = "#0000ff";
+            }
+            obj2[flag].style.backgroundColor = "#666666";
+        }
+	
+</script>
+ 
+<style>
+	body{
+		font-family:"楷体"; 
+		font-size:18px;
+		text-align:center;
+	}
+	.right {
+	    height:500px;
+	    width:700px;
+	    overflow:hidden;
+	    position:relative;   
+	}
+	.right ul {
+	    list-style:none;
+	    position: absolute;
+	    align:center;
+	    top:90%;
+	    left:30%;
+	}
+	.right li {
+	    opacity: .3;
+	    /*设置透明度*/
+            filter: alpha(opacity=30); 
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            height: 30px;
+            width: 30px;
+            background-color: #ffffff;
+            float: left;
+	}
+	#slider {
+	    position:absolute;
+	    top: 0px;
+            left: 0px;
+	}
+	#slider img{
+	    float: left;
+            border: none;
+       }	
+</style>
+</head>
+ 
+<body>
+<header>
+  <h1> 图片轮播</h1>
+</header>
+   <div class = right > 
+      <div id="slider">
+            <a target="_blank" href="#"><img src="image/6.jpg" /></a>
+            <a target="_blank" href="#"><img id="second" /></a>
+            <a target="_blank" href="#"><img id="third" /></a>
+        </div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+  </div>
+</body>
+</html>

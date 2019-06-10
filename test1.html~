@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript - 窗口滚动跟随的效果</title>
+</head>
+<body>
+<div id="wrapper" style="width:960px; margin:0 auto">
+	<div id="header" style="height:100px"><h1>this is header...</h1></div>
+	<!-- 除了 id="left" style="position:relative; top:0" ，其他的都只是摆设 -->
+	<div id="secondary_content" style="float:left; width:190px; background:#DDD; border:2px solid #660000; position:relative; top:0;">
+		<h3>secondary content...</h3><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p>
+	</div>
+	<div id="main_content" style="float:right; width:750px; background:#DDD; height:10000px"><h2>this is main content...</h2></div>
+</div>
+</body>
+</html>
+<mce:script type="text/javascript"><!--
+//获取对象的初始位置
+var t = document.getElementById('secondary_content').offsetTop;
+window.onscroll = function() {
+	//IE与Mozilla为前者，Chrome取后者的值
+	var scroll_top = document.documentElement.scrollTop || document.body.scrollTop; 
+	//滚动时分两种情况考虑，再赋值
+	document.getElementById('secondary_content').style.top = scroll_top > t ? scroll_top - t + 'px' : 0;
+}
+// --></mce:script>

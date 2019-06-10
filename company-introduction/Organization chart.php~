@@ -1,0 +1,206 @@
+<html>
+
+<head>
+	<title>About</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link href="/css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen" property="" />
+	<link href="/css/style.css" rel='stylesheet' type='text/css' />
+	<link href="/css/team.css" rel='stylesheet' type='text/css' />
+	<link href="/css/fontawesome-all.css" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Poppins:100i,200,200i,300,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+</head>
+
+<style>
+ * {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+        }
+        #dic1 {
+            width: 100%;
+            height: 700px;
+	    font-size: 24px;
+            margin: 0px auto;
+            position: relative; /*相对定位,相对于.btn按钮*/
+            text-align: left;
+        }
+	
+}
+</style>
+<body>
+
+<header>
+		<div class="header_top" id="home">
+			<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+				<a class="navbar-brand" href="/index.php">
+				 <img src="/XZ-公司网站-TXT-190412.files/image001.png"></img></a>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mx-auto tp-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="/index.php">网站首页
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="/company-introduction/index.php">关于攀星</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/news/index.php">新闻动态</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+							    aria-expanded="false">
+								解决方案
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="/products/index.php">产品中心</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="/technology/index.php">技术方案</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="/case/index.php">应用案例</a>
+							</div>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="/contact/index.php">联系我们</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="/job/index.php">加入我们</a>
+						</li>
+					</ul>
+				
+
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<!--//header-->
+
+	<!--/banner-->
+	<div class="banner-inner">
+	</div>
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a href="/index.php">网站首页</a>
+		</li>
+		<li class="breadcrumb-item active">关于攀星</li>
+	</ol>
+	<!--/model-->
+
+
+<div id="dic1" class="asd">
+     <div id="secondary_content" style="float:left; width:190px; background:#DDD; border:2px solid #660000; position:relative; top:0;">
+ <ul>
+   <li><a >关于我们</a></li>
+   <li><a href="./index.php">企业简介</a></li>
+   <li><a href="./Organization chart.php">组织架构</a></li>
+   <li><a href="./corparate_culture.php">企业文化</a></li>
+   <li><a href="./qualifications.php">企业资质</a></li>
+ </ul>
+</div>
+<div style="width:80%;float:left">
+<a>
+<img src="../XZ-公司网站-TXT-190412.files/image004.png" style="height:700px;width:100%"/>
+</a>
+</div>
+</div>
+<?php
+require('../footer.php');
+?>
+</body>
+</html>	
+<script type="text/javascript">
+//获取对象的初始位置
+var t = document.getElementById('secondary_content').offsetTop;
+window.onscroll = function() {
+	//IE与Mozilla为前者，Chrome取后者的值
+	var scroll_top = document.documentElement.scrollTop || document.body.scrollTop; 
+	//滚动时分两种情况考虑，再赋值
+	document.getElementById('secondary_content').style.top = scroll_top > t ? scroll_top - t + 'px' : 0;
+}
+</script>
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+<!-- //js -->
+<!-- stats -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.countup.js"></script>
+	<script>
+		$('.counter').countUp();
+	</script>
+	<!-- //stats -->
+		<!-- /js files -->
+		<link href='css/aos.css' rel='stylesheet prefetch' type="text/css" media="all" />
+		<link href='css/aos-animation.css' rel='stylesheet prefetch' type="text/css" media="all" />
+		<script src='js/aos.js'></script>
+		<script src="js/aosindex.js"></script>
+		<!-- //js files -->
+	<!-- flexSlider -->
+	<script defer src="js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+	  $(window).load(function(){
+		$('.flexslider').flexslider({
+		  animation: "slide",
+		  start: function(slider){
+			$('body').removeClass('loading');
+		  }
+		});
+	  });
+	</script>
+  
+	<!-- //flexSlider -->
+
+	<!-- start-smoth-scrolling -->
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 900);
+			});
+		});
+	</script>
+	<!-- start-smoth-scrolling -->
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			/*
+									var defaults = {
+							  			containerID: 'toTop', // fading element id
+										containerHoverID: 'toTopHover', // fading element hover id
+										scrollSpeed: 1200,
+										easingType: 'linear' 
+							 		};
+									*/
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<a href="#home" class="scroll" id="toTop" style="display: block;">
+		<span id="toTopHover" style="opacity: 1;"> </span>
+	</a>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
